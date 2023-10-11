@@ -13,6 +13,13 @@
             "Lakuuu\\SalonMiddleware\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lakuuu\\SalonMiddleware\\MiddlewareServiceProvider"
+            ]
+        }
+    },
     "require": {
         "php": ">=7.0",
         "illuminate/http": "5.* || 6.* || ^9.0",

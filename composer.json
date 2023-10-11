@@ -1,5 +1,13 @@
 {
     "name": "lakuuu/salon-middleware",
+    "description": "Lakuuu salon middleware for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Heinrich Bernard",
+            "email": "ben@lakuuu.id"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Lakuuu\\SalonMiddleware\\": "src/"

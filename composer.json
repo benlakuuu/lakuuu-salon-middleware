@@ -1,0 +1,15 @@
+{
+    "name": "lakuuu/salon-middleware",
+    "autoload": {
+        "psr-4": {
+            "Lakuuu\\SalonMiddleware\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "illuminate/http": "5.* || 6.* || ^9.0",
+        "illuminate/routing": "5.* || 6.* || ^9.0",
+        "illuminate/support": "5.* || 6.* || ^9.0",
+        "ext-json": "*"
+    }
+}

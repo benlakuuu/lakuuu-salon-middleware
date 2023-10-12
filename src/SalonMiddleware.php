@@ -17,10 +17,10 @@ class SalonMiddleware
             $data = Arr::get($context, 'authorizer.lambda');
         }
 
-        if (env('env') === 'local') {
+        if (env('APP_ENV') === 'local') {
             $data = [
-                'user_id' => $request->header('user_id'),
-                'salon_id' => $request->header('salon_id')
+                'user_id' => $request->header('user-id'),
+                'salon_id' => $request->header('salon-id')
             ];
         }
 

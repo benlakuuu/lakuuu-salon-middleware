@@ -17,7 +17,7 @@ class SalonMiddleware
             $data = Arr::get($context, 'authorizer.lambda');
         }
 
-        if (env('APP_ENV') === 'local') {
+        if (env('APP_ENV') !== 'staging' && env('APP_ENV' !== 'production')) {
             $data = [
                 'user_id' => $request->header('user-id'),
                 'salon_id' => $request->header('salon-id')

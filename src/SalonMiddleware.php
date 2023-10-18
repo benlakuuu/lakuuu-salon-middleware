@@ -22,6 +22,9 @@ class SalonMiddleware
                 'user_id' => $request->header('user-id'),
                 'salon_id' => $request->header('salon-id')
             ];
+        } else {
+            $request->headers->set('user-id', $data['user_id'] ?? '');
+            $request->headers->set('salon-id', $data['salon_id'] ?? '');
         }
 
         $request->merge([

@@ -15,9 +15,9 @@
     },
     "require": {
         "php": ">=7.0",
-        "illuminate/http": "5.* || 6.* || ^9.0",
-        "illuminate/routing": "5.* || 6.* || ^9.0",
-        "illuminate/support": "5.* || 6.* || ^9.0",
+        "illuminate/http": "5.* || 6.* || ^9.*",
+        "illuminate/routing": "5.* || 6.* || ^9.*",
+        "illuminate/support": "5.* || 6.* || ^9.*",
         "ext-json": "*"
     }
 }

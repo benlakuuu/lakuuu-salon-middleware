@@ -4,6 +4,7 @@ namespace Lakuuu\SalonMiddleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 
@@ -19,10 +20,18 @@ class SalonMiddleware
         }
 
         if (env('APP_LAKUUU_AUTHORIZER_URL') !== '') {
-            $userRequest = Http::post(env('APP_LAKUUU_AUTHORIZER_URL'), [
-                'access_token' => $request->header('Authorization')
-            ]);
-            $userRequest->throw();
+            $userRequest = Http::withHeaders([
+                'Authorization' => $request->header('Authorization')
+            ])->get(env('APP_LAKUUU_AUTHORIZER_URL'));
+
+            if ($userRequest->clientError()) {
+                return new Response('Unauthorized', 403);
+            }
+
+            if ($userRequest->serverError()) {
+                return new Response('Lakuuu Authorizer not Available', 500);
+            }
+
             $userResponse = $userRequest->json();
 
             $data = [

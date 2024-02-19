@@ -19,7 +19,7 @@ class SalonMiddleware
             $data = Arr::get($context, 'authorizer.lambda');
         }
 
-        if (env('APP_LAKUUU_AUTHORIZER_URL') !== '') {
+        if (!empty(env('APP_LAKUUU_AUTHORIZER_URL'))) {
             $userRequest = Http::withHeaders([
                 'Authorization' => $request->header('Authorization')
             ])->get(env('APP_LAKUUU_AUTHORIZER_URL'));

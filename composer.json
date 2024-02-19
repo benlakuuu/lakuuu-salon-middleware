@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Lakuuu\\SalonApi\\": "src/"
+            "Lakuuu\\SalonMiddleware\\": "src/"
         }
     },
     "require": {
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lakuuu\\SalonApi\\ApiServiceProvider"
+                "Lakuuu\\SalonMiddleware\\ApiServiceProvider"
             ]
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lakuuu\SalonApi;
+namespace Lakuuu\SalonMiddleware;
 
 use Illuminate\Support\ServiceProvider;
 

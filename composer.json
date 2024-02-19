@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Lakuuu\\SalonMiddleware\\": "src/"
+            "Lakuuu\\SalonApi\\": "src/"
         }
     },
     "require": {

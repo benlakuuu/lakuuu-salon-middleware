@@ -1,0 +1,10 @@
+image: chilio/laravel-dusk-ci:php-8.2
+
+stages:
+  - publish
+
+deploy-job:
+  stage: publish
+  script:
+    - 'curl --data tag=<tag> --header "Deploy-Token: ${LAKUUU_PACKAGE_TOKEN}" "https://gitlab.example.com/api/v4/projects/${CI_PROJECT_ID}/packages/composer"'
+    #    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${LAKUUU_PACKAGE_TOKEN}">.npmrc

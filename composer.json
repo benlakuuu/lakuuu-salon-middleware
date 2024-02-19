@@ -1,6 +1,6 @@
 {
-    "name": "lakuuu/salon-middleware",
-    "description": "Lakuuu salon middleware for Laravel",
+    "name": "lakuuu/salon-api",
+    "description": "Lakuuu salon api",
     "license": "MIT",
     "authors": [
         {
@@ -19,5 +19,12 @@
         "illuminate/routing": "5.* || 6.* || 9.* || 10.*",
         "illuminate/support": "5.* || 6.* || 9.* || 10.*",
         "ext-json": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lakuuu\\SalonApi\\ApiServiceProvider"
+            ],
+        }
     }
 }

@@ -1,3 +1,3 @@
-# lakuuu-salon-middleware
+# lakuuu-salon-api
 
-composer require lakuuu/salon-middleware
+composer require lakuuu/salon-api

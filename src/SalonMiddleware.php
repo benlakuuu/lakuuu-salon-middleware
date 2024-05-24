@@ -50,9 +50,9 @@ class SalonMiddleware
         }
 
         $request->merge([
-            'salon_user_id' => $data['user_id'] ?? '',
-            'client_id' => $data['client_id'] ?? '',
-            'salon_id' => $data['salon_id'] ?? '',
+            'salon_user_id' => $data['user_id'] ?? ($request->get('user_id'), ''),
+            'client_id' => $data['client_id'] ?? ($request->get('client_id'), ''),
+            'salon_id' => $data['salon_id'] ?? ($request->get('salon_id'), ''),
         ]);
 
         return $next($request);

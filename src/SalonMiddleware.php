@@ -35,20 +35,23 @@ class SalonMiddleware
             $userResponse = $userRequest->json();
 
             $data = [
-                'user_id' => $userResponse['id'],
-                'salon_id' => $userResponse['salon_id'],
+                'user_id' => $userResponse['id'] ?? '',
+                'client_id' => $userResponse['client_id'] ?? '',
+                'salon_id' => $userResponse['salon_id'] ?? '',
             ];
         }
 
         if (env('APP_ENV') !== 'staging' && env('APP_ENV') !== 'production') {
             $data = [
-                'user_id' => $request->header('user-id'),
-                'salon_id' => $request->header('salon-id')
+                'user_id' => $request->header('user-id') ?? '',
+                'client_id' => $request->header('client-id') ?? '',
+                'salon_id' => $request->header('salon-id') ?? ''
             ];
         }
 
         $request->merge([
             'salon_user_id' => $data['user_id'] ?? '',
+            'client_id' => $data['client_id'] ?? '',
             'salon_id' => $data['salon_id'] ?? '',
         ]);
 

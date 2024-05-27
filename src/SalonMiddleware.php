@@ -35,24 +35,24 @@ class SalonMiddleware
             $userResponse = $userRequest->json();
 
             $data = [
-                'user_id' => $userResponse['id'] ?? '',
-                'client_id' => $userResponse['client_id'] ?? '',
-                'salon_id' => $userResponse['salon_id'] ?? '',
+                'user_id' => $userResponse['id'] ?? null,
+                'client_id' => $userResponse['client_id'] ?? null,
+                'salon_id' => $userResponse['salon_id'] ?? null,
             ];
         }
 
         if (env('APP_ENV') !== 'staging' && env('APP_ENV') !== 'production') {
             $data = [
-                'user_id' => $request->header('user-id') ?? '',
-                'client_id' => $request->header('client-id') ?? '',
-                'salon_id' => $request->header('salon-id') ?? ''
+                'user_id' => $request->header('user-id') ?? null,
+                'client_id' => $request->header('client-id') ?? null,
+                'salon_id' => $request->header('salon-id') ?? null
             ];
         }
 
         $request->merge([
-            'salon_user_id' => $data['user_id'] ?? ($request->get('user_id', '')),
-            'client_id' => $data['client_id'] ?? ($request->get('client_id', '')),
-            'salon_id' => $data['salon_id'] ?? ($request->get('salon_id', '')),
+            'salon_user_id' => $data['user_id'] ?? ($request->get('user_id', null)),
+            'client_id' => $data['client_id'] ?? ($request->get('client_id', null)),
+            'salon_id' => $data['salon_id'] ?? ($request->get('salon_id', null)),
         ]);
 
         return $next($request);
